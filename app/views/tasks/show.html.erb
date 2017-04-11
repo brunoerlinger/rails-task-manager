@@ -1,0 +1,14 @@
+
+<h2>Tarefa: <%= @task.name %> </h2>
+<h4>Descrição: <%= @task.description %> </h4>
+<h5><%= @task.done %></h5>
+
+
+<%= link_to "Editar", edit_task_path(@task) %>
+
+<br>
+
+<%= link_to "Apagar esta tarefa", task_path(@task), method: :delete, data: { confirm: "Você tem certeza?" } %>
+
+<br>
+<%= link_to "Ver todos", tasks_path %>

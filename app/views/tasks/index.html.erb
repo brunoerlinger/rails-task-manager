@@ -1,0 +1,16 @@
+<h1>************** TASK MANAGER **************</h1>
+
+<h2>Lista de Tarefas:</h2>
+
+<%= link_to 'Criar nova tarefa', new_task_path %>
+
+<% @tasks.each do |task| %>
+
+  <h3>Tarefa: <%= link_to task.name, task_path(task) %> </h3>
+  <h5>Descrição: <%= task.description %> </h5>
+  <h5><%= task.done %></h5>
+  <%= link_to "Editar", edit_task_path(task) %>
+  <%= link_to "Apagar esta tarefa", task_path(task), method: :delete, data: { confirm: "Você tem certeza?" } %>
+<% end %>
+
+
